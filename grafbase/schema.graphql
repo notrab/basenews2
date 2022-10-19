@@ -3,10 +3,17 @@ type Post @model {
   title: String!
   url: String! @unique
   comments: [Comment]
+  votes: [Vote]
 }
 
 type Comment @model {
   id: ID!
   message: String!
+  post: Post!
+}
+
+type Vote @model {
+  id: ID!
+  test: String
   post: Post!
 }
